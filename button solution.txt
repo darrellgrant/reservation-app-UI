@@ -1,0 +1,15 @@
+David,
+On the Program Application form, the original Submit button now works as intended, and I have done several tests to confirm (information is indeed submitted to the database). I removed the additional Submit button that we had been using as a workaround, and confirmed that the Application still functions as intended. 
+
+The solution:
+You recall that you added these lines:
+
+document.getElementById("nextBtn").addAttribute("name", "btnSubmit");
+document.getElementById("nextBtn").setAttribute("type", "submit");  
+
+
+You were correct to add the setAttribute code, this was, in fact, the solution. However the addAttribute code threw an error, as addAttribute is not actually a js function (maybe PHP?). 
+I commented out the addAttribute code and just added the name="btnSubmit" to the button. 
+
+Thanks for your help and patience
+Have a great weekend.
