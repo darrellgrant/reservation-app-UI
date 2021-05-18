@@ -6,6 +6,7 @@
 
 body {
   font-family: "Montserrat", sans-serif;
+  overflow: hidden;
 }
 
 nav {
@@ -84,12 +85,29 @@ nav {
 
 .showcase {
   animation: transitionIn 1s;
-  /* background-color: darkorchid; */
+
+  background-image: url("../images/index-img.jpg");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
   height: 100vh;
-  width: 100vw;
+  overflow: auto;
 }
 
-.showcase .showcase-inner {
+.showcase-reservation {
+  animation: transitionIn 1s;
+
+  background-image: url("../images/coffee-5.jpg");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 100vh;
+  overflow: auto;
+}
+
+.showcase-inner {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -133,8 +151,7 @@ textarea#textarea:focus {
 }
 
 /*custom radio buttons*/
-input[type="radio"]{
-  
+input[type="radio"] {
 }
 
 .button {
@@ -297,7 +314,8 @@ hr {
   }
 }
 
-/* MEDIA QUERIES*/
+/***************************************** MEDIA QUERIES********************************************/
+/**************************************************************************************************/
 
 /* Change styles for cancel button and delete button on extra small screens */
 @media screen and (max-width: 767px) {

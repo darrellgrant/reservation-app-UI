@@ -1,7 +1,7 @@
 <?php
 include_once "header.php";
 ?>
-    <header class="showcase">
+    <header class="showcase-reservation">
       <div class="container showcase-inner">
         <div class="card">
           
