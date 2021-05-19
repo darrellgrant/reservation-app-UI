@@ -7,6 +7,7 @@ showTab(currentTab);
 
 function showTab(n) {
   let x = document.querySelectorAll(".tab");
+
   if (x.length === 0) {
     return;
   }
@@ -207,7 +208,8 @@ function validateDate() {
   let dateInputValue = document.querySelector("#dateInput").value.trim();
   let errMsg04 = document.querySelector("#errMsg04");
   let dateInput = document.querySelector("#dateInput");
-  let dateCheck = /^((0?[1-9]|1[012])[- /.](0?[1-9]|[12][0-9]|3[01])[- /.](19|20)?[0-9]{2})*$/;
+  let dateCheck =
+    /^((0?[1-9]|1[012])[- /.](0?[1-9]|[12][0-9]|3[01])[- /.](19|20)?[0-9]{2})*$/;
   let valid = true;
 
   if (dateInputValue != "" && !dateCheck.test(dateInputValue)) {
@@ -361,7 +363,11 @@ if (cancelBTN) {
 /***************************VALIDATE UPDATE FORM****************************/
 //validate entries in form used to update user entries (update.php)
 /**********************************************************************/
-
+//put all the error message divs into one collection/list
+let errorTextGroup = document.querySelectorAll(".errMsg .errorText");
+let errTextGrp = document.getElementsByClassName("errorText");
+console.log(errorTextGroup);
+console.log(errTextGrp);
 //Make sure form does not submit if any req. field is empty
 valid = true;
 function validateUpdateInput(e) {
@@ -392,9 +398,6 @@ if (cancelUpdate) {
 }
 
 //make sure fields have correct data prior to submit
-
-//put all the error message divs into one collection/list
-let errorTextGroup = document.getElementsByClassName("errorText");
 
 //first name->
 let fn = document.getElementById("first-name");
@@ -437,6 +440,9 @@ if (phn) {
     let phoneCheck = /^(\d{3}-\d{3}-\d{4})*$/;
 
     if (phnValue != "" && !phoneCheck.test(phnValue)) {
+      if (errorTextGroup.length === 0) {
+        return;
+      }
       errorTextGroup[2].innerHTML =
         "Please enter ph. number in format: 123-456-7890";
 
@@ -451,7 +457,8 @@ let dt = document.getElementById("dateInput");
 if (dt) {
   dt.addEventListener("change", function () {
     let dtValue = dt.value.trim();
-    let dateCheck = /^((0?[1-9]|1[012])[- /.](0?[1-9]|[12][0-9]|3[01])[- /.](19|20)?[0-9]{2})*$/;
+    let dateCheck =
+      /^((0?[1-9]|1[012])[- /.](0?[1-9]|[12][0-9]|3[01])[- /.](19|20)?[0-9]{2})*$/;
 
     if (dtValue != "" && !dateCheck.test(dtValue)) {
       errorTextGroup[3].innerHTML = "Please enter date in format: mm/dd/yyyy";

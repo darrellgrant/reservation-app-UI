@@ -11,11 +11,11 @@ include_once "header.php";
               <!-- one -->
 
               <div class="tab">
-                <h3>We're so glad to have you dining with us!</h3>
+               
       
                 <div class="error" id="genError00"></div>
                
-              <h4>Please enter your first and last name</h4>
+              
               <div>
               <input
                   type="text"
@@ -40,8 +40,8 @@ include_once "header.php";
                 />
                 <div class="error" id="errMsg02"></div>
 
-                <h4>Please enter a phone number</h4>
-                <p>Example: 555-123-1234</p>
+                
+                
                 <input
                   type="text"
                   name="phone"
@@ -51,6 +51,7 @@ include_once "header.php";
                   class="inputGroup_0"
                   onchange="validateNumber()"
                 />
+                <p>Example: 555-123-1234</p>
                 <div class="error" id="errMsg03"></div>
               </div>
 
@@ -58,7 +59,7 @@ include_once "header.php";
 
               <div class="tab">
                 <h4>
-                  Please enter the date and time you'd like to dine with us
+                  Please enter the date and time you wish to dine with us
                 </h4>
                 <div class="error" id="genError01"></div>
 
@@ -103,7 +104,7 @@ include_once "header.php";
                 
                 
                 <h4>Do you or a guest need special accomodations?</h4>
-                <section>
+                <section id="yes-no-radioBTN">
                   <div>
                   <input
                     type="radio"
@@ -129,7 +130,7 @@ include_once "header.php";
                 <section id="special-note">
                   Please enter your accomodation requirements</h3>
                   <div>
-                  <textarea name="special-note" cols="30" rows="10" id="textarea"></textarea>
+                  <textarea name="special-note" cols="30" rows="3" id="textarea" maxlength="58"></textarea>
                 </div>
                 </section>
               </div>
@@ -138,6 +139,9 @@ include_once "header.php";
               <div class="tab">
                 <h4>Seating preference</h4>
                 <div class="error" id="genError03"></div>
+                <section id="seat-pref-radioBTN">
+                
+              <div> 
                 <input
                   type="radio"
                   name="preference"
@@ -146,7 +150,9 @@ include_once "header.php";
                   class="radioGroup03"
                 />
                 <label for="nonsmoking">Non-Smoking</label>
+              </div> 
 
+              <div>
                 <input
                   type="radio"
                   name="preference"
@@ -155,7 +161,8 @@ include_once "header.php";
                   class="radioGroup03"
                 />
                 <label for="smoking">Smoking</label>
-
+              </div>
+              <div>
                 <input
                   type="radio"
                   name="preference"
@@ -164,6 +171,8 @@ include_once "header.php";
                   class="radioGroup03"
                 />
                 <label for="nonsmoking">No Preference</label>
+              </div>
+                </section>
               </div>
 
               <!-- submit btn -->

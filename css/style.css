@@ -13,21 +13,22 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.8rem;
+  padding: 0px 1rem;
 }
 
 .nav-ul {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0;
   list-style-type: none;
 }
 
 .nav-ul li a {
   display: inline-block;
+  color: #719df0;
   text-decoration: none;
-  padding: 0.8rem 1.5rem;
+  padding: 0.7rem;
+  text-align: center;
 }
 
 .container {
@@ -47,7 +48,7 @@ nav {
 /*navbar hamburger*/
 .hamburger {
   display: none;
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.3rem;
 }
 .sidenav .closebtn {
   position: absolute;
@@ -126,6 +127,7 @@ input[type="text"] {
   border-radius: 5px;
   padding: 5px;
   margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
   height: 3rem;
   width: 225px;
   font-size: 1.5rem;
@@ -135,6 +137,17 @@ input[type="text"] {
 input[type="text"]:focus {
   outline: none;
   border: solid 4px #719df0;
+}
+
+#yes-no-radioBTN {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+}
+#no-special {
+  margin-left: 1rem;
 }
 textarea {
   resize: none;
@@ -152,6 +165,33 @@ textarea#textarea:focus {
 
 /*custom radio buttons*/
 input[type="radio"] {
+}
+
+#seat-pref-radioBTN {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+}
+/*seating preference radio btns*/
+#yes {
+  margin-bottom: 0.5rem;
+}
+
+#no {
+  margin-bottom: 0.5rem;
+}
+
+/*link to update.php after user submits*/
+
+/* #pad-td for padding inside td to format the accesibility note in the guestinfo.php table */
+#pad-td {
+  padding: 0px 10px;
+}
+
+/*guestinfo.php --> table showing user submitted data*/
+.guestinfo-table {
+  margin-bottom: 20px;
 }
 
 .button {
@@ -177,11 +217,21 @@ input[type="radio"] {
 }
 
 .front-form {
-  /* background-color: darkorange; */
   padding: 10px;
 }
+.update-table-desktop {
+  display: block;
+}
+.update-table-mobile {
+  display: none;
+}
+
 .a1 {
   background-color: rgb(235, 177, 106);
+}
+
+.update-table-desktop td {
+  padding: 5px 10px 0px 10px;
 }
 /*if user has to write a note re: accesibility needs, etc.*/
 #special-note {
@@ -196,6 +246,10 @@ input[type="radio"] {
 
 input.invalid {
   background-color: #ffdddd;
+}
+
+.btn-container {
+  margin-top: 50px;
 }
 
 /*Make the circles*/
@@ -318,7 +372,11 @@ hr {
 /**************************************************************************************************/
 
 /* Change styles for cancel button and delete button on extra small screens */
+@media screen and (max-width: 1020px) {
+}
+
 @media screen and (max-width: 767px) {
+  /******Navigation and Hamburger Nav***********************/
   .nav-ul {
     display: none;
   }
@@ -326,20 +384,52 @@ hr {
   .hamburger {
     display: block;
   }
-}
 
-@media screen and (max-height: 450px) {
   .sidenav {
     padding-top: 15px;
   }
   .sidenav a {
     font-size: 18px;
   }
-}
-
-@media screen and (max-width: 300px) {
   .cancelbtn,
   .deletebtn {
     width: 100%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  /*******Table for UPDATE.PHP (user can update/edit reservation input values)****************************/
+  .update-table-desktop {
+    display: none;
+  }
+  .update-table-mobile {
+    overflow: scroll;
+    display: block;
+  }
+
+  #update-mobile-screen {
+    padding-bottom: 20px;
+  }
+
+  #update-submit {
+    margin-bottom: 20px;
+  }
+  .guestinfo-table {
+    margin-bottom: 20px;
+  }
+  #updateBTN {
+    margin-bottom: 40px;
+  }
+  .guestinfo-table h3 {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 330px) {
+  .navbar-logo-img {
+    width: 230px;
+  }
+  body {
+    overflow: scroll;
   }
 }

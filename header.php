@@ -35,8 +35,8 @@ session_start();
     
     <ul class="nav-ul" id="nav-ul">
         <li><a href="index.php" >Home</a></li>
-        <li><a href="reservation.php">Reserve a Table</a></li>
-        <li><a href="review.php">View or Change Reservation</a></li>
+        <li><a href="reservation.php">Reserve a<br> Table</a></li>
+        <li><a href="review.php">View or Change<br> Reservation</a></li>
         <li><a href="cancel.step1.php">Cancel</a></li>
     </ul>
 </nav>

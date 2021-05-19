@@ -25,7 +25,7 @@ if (isset($_SESSION['guest'])){
 <div class="front-form">
 
 
-    <table >
+    <table class="guestinfo-table">
         <tr>
             <td>
                <h3><?php echo "Reservation for Guest<br> " . $row['firstname'] . " " . $row['lastname']; ?></h3>
@@ -54,12 +54,16 @@ if (isset($_SESSION['guest'])){
     <?php echo $row['smokePref']; ?></td>
 </tr>
    <tr class="a1">
-    <td><h4>Special Accomodations Needed?</h4>
+    <td ><h4>Special Accomodations Needed?</h4>
     <?php echo $row['needsAccess']; ?></td>
 </tr>
    <tr class="a1">
-    <td><h4>Note</h4>
-    <?php echo $row['accessNote']; ?></td>
+    <td id="pad-td"><h4>Note</h4>
+        
+        <?php echo $row['accessNote']; ?> 
+        
+    </td>
+   
 </tr>
 
 
@@ -67,8 +71,10 @@ if (isset($_SESSION['guest'])){
 </table>
 <section>
 <div>
-<p>Need changes?</p>
-<a href="update.php">Edit Details</a>
+
+<div id="updateBTN">
+<a href="update.php" id="update-link" class="button">Edit Details</a>
+</div>
 </div>
 
 

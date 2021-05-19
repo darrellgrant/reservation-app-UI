@@ -6,12 +6,10 @@ include_once "header.php";
     <!---content--->
           <div class="main-image">
                 <h1>Rick's Cafe'</h1>
-                <p>Eatery and Fine Dining</p>
-                <p>"Everybody Comes to Rick's"</p>
+                <p>Open for Lunch and Dinner</p>
                 
             </div>
             <div>
-                <h2>Reservation App</h2>
                 <div id="indexBTN"><a href="reservation.php" id="reservationBTN" class="button">Reserve a Table</a></div>
                
             </div>
