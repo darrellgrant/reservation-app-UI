@@ -135,8 +135,7 @@ if (isset($_SESSION['guest'])){
 
    
     </td>
-<!-- </tr>
-   <tr class="a1"> -->
+
     <td><h4>Special Accomodations<br> Needed?</h4>
                 <input
                   type="radio"
@@ -161,6 +160,7 @@ if (isset($_SESSION['guest'])){
    <tr class="a1">
     <td colspan="2"><h4>Note</h4>
     <textarea name="special-note" id="special-text-area" cols="30" rows="3"  placeholder="<?php echo $row['accessNote'] ?>"></textarea>
+    <input type="hidden" name="temp-note" value="<?php echo $row['accessNote'] ?>">
     </td>
 </tr>
 <tr>
@@ -174,7 +174,7 @@ if (isset($_SESSION['guest'])){
 </table>
 </form>
 </div>
-<!-- mobile version of the form above------------------------------------------------->
+<!-- mobile version of the preceding update form------------------------------------------------->
 <!----------------------------------------------------------------------------------------------------------------->
 <div class="front-form update-table-mobile">
 
@@ -316,6 +316,7 @@ if (isset($_SESSION['guest'])){
    <tr class="a1">
         <td><h4>Note</h4>
             <textarea name="special-note" id="special-text-area" cols="30" rows="3"  placeholder="<?php echo $row['accessNote'] ?>"></textarea>
+            <input type="hidden" name="temp-note" value="<?php echo $row['accessNote'] ?>">
         </td>
     </tr>
     <tr>

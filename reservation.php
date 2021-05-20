@@ -59,7 +59,7 @@ include_once "header.php";
 
               <div class="tab">
                 <h4>
-                  Please enter the date and time you wish to dine with us
+                  Please enter the date and<br> time you wish to dine with us
                 </h4>
                 <div class="error" id="genError01"></div>
 

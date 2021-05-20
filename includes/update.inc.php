@@ -19,6 +19,8 @@ if(!isset($_POST['submitUpdate'])){
 	$note = check_input($_POST['special-note']);
 	$preference = check_input($_POST['preference']);
 	$customerID = check_input($_POST['customerID']);
+	//hidden value from update.php --> should equal 'special-note'/$note value
+	$tempNote = check_input($_POST['temp-note']);
 
 	if (
 		empty($fname) ||
@@ -35,7 +37,7 @@ if(!isset($_POST['submitUpdate'])){
 
 
 	}else{
-		if($accomodations == "no"){
+		if($accomodations === "no"){
 		$sql="UPDATE customer SET firstname='$fname', 
 		lastname='$lname', phone='$phone', user_date='$date', 
 		user_time='$time', guests='$guestNUM', needsAccess='$accomodations', 
@@ -44,9 +46,12 @@ if(!isset($_POST['submitUpdate'])){
 		mysqli_query($conn, $sql);
 
 		$_SESSION['message'] = "Reservation has been updated";
-		header("Location: ../guestinfo_updated.php?reservation_updated_note=no");
+		header("Location: ../guestinfo_updated.php?reservation_updated_accom=no");
 		exit();
-		}else{
+		}
+		else if($accomodations ==="yes" && $note ==""){
+		//assign value of $tempNote to $note
+		$note = $tempNote;
 		$sql="UPDATE customer SET firstname='$fname', 
 		lastname='$lname', phone='$phone', user_date='$date', 
 		user_time='$time', guests='$guestNUM', needsAccess='$accomodations', accessNote='$note',
@@ -55,9 +60,21 @@ if(!isset($_POST['submitUpdate'])){
 		mysqli_query($conn, $sql);
 
 		$_SESSION['message'] = "Reservation has been updated";
-		header("Location: ../guestinfo_updated.php?reservation_updated_note=yes");
+		header("Location: ../guestinfo_updated.php?reservation_updated_accom=yes&note=unchanged");
 		exit();
 
+		}
+		else {
+		$sql="UPDATE customer SET firstname='$fname', 
+		lastname='$lname', phone='$phone', user_date='$date', 
+		user_time='$time', guests='$guestNUM', needsAccess='$accomodations', accessNote='$note',
+		smokePref='$preference' 
+		WHERE customerID=$customerID";
+		mysqli_query($conn, $sql);
+
+		$_SESSION['message'] = "Reservation has been updated";
+		header("Location: ../guestinfo_updated.php?reservation_updated_accom=yes&note=changed");
+		exit();
 		}
 	}
 	

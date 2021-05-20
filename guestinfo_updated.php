@@ -24,6 +24,11 @@ if (isset($_SESSION['guest'])){
     <table >
         <tr>
             <td>
+                <h4 id="inform-user">Your Reservation has been Updated!</h4>
+            </td>
+        </tr>
+        <tr>
+            <td>
                <h3><?php echo "Reservation for Guest<br> " . $row['firstname'] . " " . $row['lastname']; ?></h3>
 
             </td>

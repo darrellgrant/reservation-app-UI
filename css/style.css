@@ -252,6 +252,10 @@ input.invalid {
   margin-top: 50px;
 }
 
+h4#inform-user {
+  color: crimson;
+}
+
 /*Make the circles*/
 
 .step {

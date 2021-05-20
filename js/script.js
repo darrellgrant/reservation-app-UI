@@ -364,10 +364,10 @@ if (cancelBTN) {
 //validate entries in form used to update user entries (update.php)
 /**********************************************************************/
 //put all the error message divs into one collection/list
-let errorTextGroup = document.querySelectorAll(".errMsg .errorText");
-let errTextGrp = document.getElementsByClassName("errorText");
+let errorTextGroup = document.querySelectorAll(".errorText");
+
 console.log(errorTextGroup);
-console.log(errTextGrp);
+
 //Make sure form does not submit if any req. field is empty
 valid = true;
 function validateUpdateInput(e) {
