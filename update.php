@@ -135,7 +135,7 @@ if (isset($_SESSION['guest'])){
 
    
     </td>
-
+<!-- 
     <td><h4>Special Accomodations<br> Needed?</h4>
                 <input
                   type="radio"
@@ -155,7 +155,7 @@ if (isset($_SESSION['guest'])){
                   onclick="displayNote(0)"
                 />
                 <label for="no">No</label>
-    </td>
+    </td> -->
 </tr>
    <tr class="a1">
     <td colspan="2"><h4>Note</h4>
@@ -166,7 +166,7 @@ if (isset($_SESSION['guest'])){
 <tr>
     <td colspan="2">
     <div class="errMsg" id="globalErrMSG"> </div>
-    <button type="submit" name="submitUpdate" id="update-submit" class="button">Submit Changes</button>
+    <button type="submit" name="submitUpdate-desktop" id="update-submit-desktop" class="button">Submit Changes</button>
     
     </td>
 </tr>
@@ -178,7 +178,7 @@ if (isset($_SESSION['guest'])){
 <!----------------------------------------------------------------------------------------------------------------->
 <div class="front-form update-table-mobile">
 
-<form action="includes/update.inc.php" method="POST">
+<form action="includes/update.inc.mobile.php" method="POST">
 <!--pre-'checks' radio buttons with the user selection from registration form--> 
 <?php
     if (!empty($row['needsAccess'])){
@@ -219,38 +219,38 @@ if (isset($_SESSION['guest'])){
     </tr>
     <tr class="a1">
         <td><h4>First Name</h4>
-            <input type="text" name="first-name" id="first-name" value="<?php echo $row['firstname']; ?>" class="input1" >
-            <div class="errMsg errorText"></div>
+            <input type="text" name="first-name" id="first-name" value="<?php echo $row['firstname']; ?>" class="inputMobile red" >
+            <div class="errMsg errorText-mobile"></div>
         </td>
     </tr>
     <tr class="a1">
         <td><h4>Last Name</h4>
-            <input type="text" name="last-name" id="last-name" value="<?php echo $row['lastname']; ?>" class="input1" >
-            <div class="errMsg errorText"></div>
+            <input type="text" name="last-name" id="last-name" value="<?php echo $row['lastname']; ?>" class="inputMobile" >
+            <div class="errMsg errorText-mobile"></div>
         </td>
     </tr>
     <tr class="a1">
         <td><h4>Phone Number</h4>
-            <input type="text" name="phone" id="phone" value="<?php echo $row['phone']; ?>" class="input1">
-            <div class="errMsg errorText"></div>
+            <input type="text" name="phone" id="phone" value="<?php echo $row['phone']; ?>" class="inputMobile">
+            <div class="errMsg errorText-mobile"></div>
         </td>
     </tr>
     <tr class="a1">
         <td><h4>Date</h4>
-            <input type="text" name="dateInput" id="dateInput" value="<?php echo date('m/d/Y', strtotime($row['user_date'])); ?>" class="input1">
-            <div class="errMsg errorText"></div>
+            <input type="text" name="dateInput" id="dateInput" value="<?php echo date('m/d/Y', strtotime($row['user_date'])); ?>" class="inputMobile">
+            <div class="errMsg errorText-mobile"></div>
         </td> 
     </tr>
     <tr class="a1">
         <td><h4>Time</h4>
-            <input type="text" name="timeInput" id="timeInput" value="<?php echo $row['user_time']; ?>" class="input1">
-            <div class="errMsg errorText"></div>
+            <input type="text" name="timeInput" id="timeInput" value="<?php echo $row['user_time']; ?>" class="inputMobile">
+            <div class="errMsg errorText-mobile"></div>
         </td>
     </tr>
     <tr class="a1">
         <td><h4>No. of Guests</h4>
-            <input type="text" name="guests" id="guests" value="<?php echo $row['guests']; ?>" class="input1">
-            <div class="errMsg errorText"></div>
+            <input type="text" name="guests" id="guests" value="<?php echo $row['guests']; ?>" class="inputMobile">
+            <div class="errMsg errorText-mobile"></div>
         </td>
     </tr>
    <tr class="a1">
@@ -321,8 +321,8 @@ if (isset($_SESSION['guest'])){
     </tr>
     <tr>
         <td>
-            <div class="errMsg" id="globalErrMSG"> </div>
-            <button type="submit" name="submitUpdate" id="update-submit" class="button">Submit Changes</button>
+            <div class="errMsg" id="globalErrMSG-mobile"> </div>
+            <button type="submit" name="submitUpdate-mobile" id="update-submit" class="button">Submit Changes</button>
         </td>
     </tr>
 

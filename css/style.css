@@ -163,10 +163,6 @@ textarea#textarea:focus {
   border: solid 4px #719df0;
 }
 
-/*custom radio buttons*/
-input[type="radio"] {
-}
-
 #seat-pref-radioBTN {
   display: flex;
   flex-direction: column;
@@ -182,7 +178,9 @@ input[type="radio"] {
   margin-bottom: 0.5rem;
 }
 
-/*link to update.php after user submits*/
+.errorText-mobile {
+  height: 1rem;
+}
 
 /* #pad-td for padding inside td to format the accesibility note in the guestinfo.php table */
 #pad-td {
@@ -228,6 +226,10 @@ input[type="radio"] {
 
 .a1 {
   background-color: rgb(235, 177, 106);
+}
+
+.errMsg {
+  color: crimson;
 }
 
 .update-table-desktop td {
