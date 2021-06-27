@@ -135,7 +135,7 @@ if (isset($_SESSION['guest'])){
 
    
     </td>
-<!-- 
+
     <td><h4>Special Accomodations<br> Needed?</h4>
                 <input
                   type="radio"
@@ -155,7 +155,7 @@ if (isset($_SESSION['guest'])){
                   onclick="displayNote(0)"
                 />
                 <label for="no">No</label>
-    </td> -->
+    </td>
 </tr>
    <tr class="a1">
     <td colspan="2"><h4>Note</h4>

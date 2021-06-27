@@ -253,23 +253,23 @@ function validateGuestNum() {
   }
   return valid;
 }
-/*************************specialNote function***************************/
+/******************specialNote function (reservation.php)***************************/
 /*special accomodations-show special accomodations/accessibility textarea
 if user chooses yes for special accomodations, then a textarea appears for
 user to write what accomodations they require*/
 
 let yesSpecialRadioBTN = document.getElementById("yes-special");
-let specialTextArea = document.getElementById("special-text-area");
+let specialNote = document.getElementById("special-note");
 
 if (yesSpecialRadioBTN) {
   yesSpecialRadioBTN.addEventListener("click", showSpecialNote);
 }
 
 function showSpecialNote() {
-  specialTextArea.style.display = "block";
+  specialNote.style.display = "block";
 }
 
-/**********************displayNote function**********************************/
+/**********************displayNote function (update.php)**********************************/
 
 /* if during UPDATE user decides they do not want special accomodations,
 clicks the "no" radio button,
