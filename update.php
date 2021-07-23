@@ -63,24 +63,24 @@ if (isset($_SESSION['guest'])){
             </td>
         </tr>
         <tr class="a1">
-            <td><h4>First Name</h4>
+            <td class="a2"><h4>First Name</h4>
             <input type="text" name="first-name" id="first-name" value="<?php echo $row['firstname']; ?>" class="input1" >
             <div class="errMsg errorText"></div>
             </td>
         
-            <td><h4>Last Name</h4>
+            <td class="a2"><h4>Last Name</h4>
             <input type="text" name="last-name" id="last-name" value="<?php echo $row['lastname']; ?>" class="input1" >
             <div class="errMsg errorText"></div>
             </td>
         </tr>
  
         <tr class="a1">
-            <td><h4>Phone Number</h4>
+            <td class="a2"><h4>Phone Number</h4>
             <input type="text" name="phone" id="phone" value="<?php echo $row['phone']; ?>" class="input1">
             <div class="errMsg errorText"></div>
             </td>
         
-            <td><h4>Date</h4>
+            <td class="a2"><h4>Date</h4>
             <input type="text" name="dateInput" id="dateInput" value="<?php echo date('m/d/Y', strtotime($row['user_date'])); ?>" class="input1">
             <div class="errMsg errorText"></div>
             </td>
@@ -88,18 +88,18 @@ if (isset($_SESSION['guest'])){
         </tr>
 
   <tr class="a1">
-    <td><h4>Time</h4>
+    <td class="a2"><h4>Time</h4>
     <input type="text" name="timeInput" id="timeInput" value="<?php echo $row['user_time']; ?>" class="input1">
     <div class="errMsg errorText"></div>
     </td>
 
-    <td><h4>No. of Guests</h4>
+    <td class="a2"><h4>No. of Guests</h4>
     <input type="text" name="guests" id="guests" value="<?php echo $row['guests']; ?>" class="input1">
     <div class="errMsg errorText"></div>
     </td>
 </tr>
    <tr class="a1">
-    <td><h4>Seating Preference</h4>
+    <td class="a2"><h4>Seating Preference</h4>
     <div>
                 <input
                   type="radio"
@@ -136,7 +136,7 @@ if (isset($_SESSION['guest'])){
    
     </td>
 
-    <td><h4>Special Accomodations<br> Needed?</h4>
+    <td class="a2"><h4>Special Accomodations<br> Needed?</h4>
                 <input
                   type="radio"
                   name="accomodations"

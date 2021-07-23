@@ -405,6 +405,7 @@ hr {
 
 @media screen and (max-width: 480px) {
   /*******Table for UPDATE.PHP (user can update/edit reservation input values)****************************/
+  /* 
   .update-table-desktop {
     display: none;
   }
@@ -428,6 +429,13 @@ hr {
   }
   .guestinfo-table h3 {
     font-size: 1rem;
+  } */
+  body {
+    overflow: scroll;
+  }
+
+  .a2 {
+    display: block;
   }
 }
 

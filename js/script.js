@@ -515,7 +515,7 @@ if (gst) {
 }
 
 //*********************************************************************************** *//
-//function for side navigation
+//function for side or "flyout" navigation
 let toggleOn = document.getElementById("hamburger");
 if (toggleOn) {
   toggleOn.addEventListener("click", openNav);
