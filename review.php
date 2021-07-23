@@ -31,7 +31,7 @@ include_once 'header.php';
 
             <div>
             <div class="error-msg" id="error-msg-2"></div>
-            <button type="submit" name="send-review-data" id="cancelBTN">Look up reservation</button>
+            <button type="submit" name="send-review-data" id="cancelBTN" class="button">Look up reservation</button>
             </div>
 
         </form>
