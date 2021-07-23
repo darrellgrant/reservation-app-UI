@@ -166,7 +166,7 @@ if (isset($_SESSION['guest'])){
 <tr>
     <td colspan="2">
     <div class="errMsg" id="globalErrMSG"> </div>
-    <button type="submit" name="submitUpdate-desktop" id="update-submit-desktop" class="button">Submit Changes</button>
+    <button type="submit" name="submitUpdate" id="update-submit" class="button">Submit Changes</button>
     
     </td>
 </tr>

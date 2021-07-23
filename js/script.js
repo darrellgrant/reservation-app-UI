@@ -365,10 +365,143 @@ if (cancelBTN) {
 /***************************VALIDATE UPDATE FORM****************************/
 //validate entries in form used to update user entries (update.php)
 /**********************************************************************/
+//Make sure form does not submit if any req. field is empty
+valid = true;
+function validateUpdateInput(e) {
+  let inputGroup = document.getElementsByClassName("input1");
+
+  let i;
+  if (inputGroup) {
+    for (i = 0; i < inputGroup.length; i++) {
+      if (inputGroup[i].value == "") {
+        e.preventDefault();
+        document.getElementById("globalErrMSG").innerHTML =
+          "Please fill in all required fields";
+      }
+    }
+    for (i = 0; i < errorTextGroup.length; i++) {
+      if (errorTextGroup[i].innerHTML != "") {
+        e.preventDefault();
+      }
+    }
+  }
+}
+
+let cancelUpdate = document.getElementById("update-submit");
+if (cancelUpdate) {
+  cancelUpdate.addEventListener("click", function (e) {
+    validateUpdateInput(e);
+  });
+}
+
+//make sure fields have correct data prior to submit
+
+//put all the error message divs into one collection/list
+let errorTextGroup = document.getElementsByClassName("errorText");
+
+//first name->
+let fn = document.getElementById("first-name");
+if (fn) {
+  fn.addEventListener("change", function () {
+    let fnValue = fn.value.trim();
+    let letters = /^[a-zA-Z\s]+$/;
+
+    if (fnValue != "" && !letters.test(fnValue)) {
+      errorTextGroup[0].innerHTML = "Please enter only letters";
+
+      fn.onkeyup = function () {
+        errorTextGroup[0].innerHTML = "";
+      };
+    }
+  });
+}
+
+//last name->
+let ln = document.getElementById("last-name");
+if (ln) {
+  ln.addEventListener("change", function () {
+    let lnValue = ln.value.trim();
+    let letters = /^[a-zA-Z\s]+$/;
+
+    if (lnValue != "" && !letters.test(lnValue)) {
+      errorTextGroup[1].innerHTML = "Please enter only letters";
+
+      ln.onkeyup = function () {
+        errorTextGroup[1].innerHTML = "";
+      };
+    }
+  });
+}
+
+let phn = document.getElementById("phone");
+if (phn) {
+  phn.addEventListener("change", function () {
+    let phnValue = phn.value.trim();
+    let phoneCheck = /^(\d{3}-\d{3}-\d{4})*$/;
+
+    if (phnValue != "" && !phoneCheck.test(phnValue)) {
+      errorTextGroup[2].innerHTML =
+        "Please enter ph. number in format: 123-456-7890";
+
+      phn.onkeyup = function () {
+        errorTextGroup[2].innerHTML = "";
+      };
+    }
+  });
+}
+
+let dt = document.getElementById("dateInput");
+if (dt) {
+  dt.addEventListener("change", function () {
+    let dtValue = dt.value.trim();
+    let dateCheck =
+      /^((0?[1-9]|1[012])[- /.](0?[1-9]|[12][0-9]|3[01])[- /.](19|20)?[0-9]{2})*$/;
+
+    if (dtValue != "" && !dateCheck.test(dtValue)) {
+      errorTextGroup[3].innerHTML = "Please enter date in format: mm/dd/yyyy";
+
+      dt.onkeyup = function () {
+        errorTextGroup[3].innerHTML = "";
+      };
+    }
+  });
+}
+
+let tm = document.getElementById("timeInput");
+if (tm) {
+  tm.addEventListener("change", function () {
+    let tmValue = tm.value.trim();
+    let timeCheck = /^\b((1[0-2]|0?[1-9]):([0-5][0-9]) ([AaPp][Mm]))$/;
+
+    if (tmValue != "" && !timeCheck.test(tmValue)) {
+      errorTextGroup[4].innerHTML = "Please enter time in format hh:mm";
+
+      tm.onkeyup = function () {
+        errorTextGroup[4].innerHTML = "";
+      };
+    }
+  });
+}
+
+let gst = document.getElementById("guests");
+if (gst) {
+  gst.addEventListener("change", function () {
+    let gstValue = gst.value.trim();
+    let guestCheck = /(^0?[1-9]$)|(^1[0-2]$)/;
+
+    if (gstValue != "" && !guestCheck.test(gstValue)) {
+      errorTextGroup[5].innerHTML = "Please enter a value between 1 and 12";
+
+      gst.onkeyup = function () {
+        errorTextGroup[5].innerHTML = "";
+      };
+    }
+  });
+}
 
 //VALIDATE SCRIPT --> MOBILE VERSION --> validateUpdate branch
 //put all the error message divs into one collection/list
-let errorTextGroupMobile = document.querySelectorAll(".errorText-mobile");
+/* let errorTextGroupMobile = document.querySelectorAll(".errorText-mobile");
 
 console.log(errorTextGroupMobile);
 
@@ -512,7 +645,7 @@ if (gst) {
       };
     }
   });
-}
+} */
 
 //*********************************************************************************** *//
 //function for side or "flyout" navigation
