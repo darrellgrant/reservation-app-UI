@@ -331,29 +331,29 @@ if (cancelBTN) {
     let letters = /^[a-zA-Z\s]+$/;
     let phoneCheck = /^(\d{3}-\d{3}-\d{4})*$/;
     if (fname != "" && !letters.test(fname)) {
-      errorGroup[1].innerHTML = "Please enter only letters";
+      errorGroup[0].innerHTML = "Please enter only letters";
       status = false;
       inputGroup[0].onkeyup = function () {
-        errorGroup[1].innerHTML = "";
+        errorGroup[0].innerHTML = "";
         status = true;
       };
     }
 
     if (lname != "" && !letters.test(lname)) {
-      errorGroup[2].innerHTML = "Please enter only letters";
+      errorGroup[1].innerHTML = "Please enter only letters";
       status = false;
       inputGroup[1].onkeyup = function () {
-        errorGroup[2].innerHTML = "";
+        errorGroup[1].innerHTML = "";
         status = true;
       };
     }
 
     if (phone != "" && !phoneCheck.test(phone)) {
-      errorGroup[3].innerHTML =
+      errorGroup[2].innerHTML =
         "Number entered does not match the correct pattern:<br> Example 123-456-7890";
       status = false;
       inputGroup[2].onkeyup = function () {
-        errorGroup[3].innerHTML = "";
+        errorGroup[2].innerHTML = "";
         status = true;
       };
     }
@@ -361,6 +361,8 @@ if (cancelBTN) {
     return status;
   }
 }
+
+/****************************************************************************/
 
 /***************************VALIDATE UPDATE FORM****************************/
 //validate entries in form used to update user entries (update.php)

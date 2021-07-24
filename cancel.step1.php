@@ -9,7 +9,7 @@ include_once 'header.php';
                 please enter the name and phone number<br>
                 given when your reservation was made.
             </p>
-            <div class="error-msg" id="global-error-msg"></div>
+            <div class="error-1" id="global-error-msg"></div>
 
             <form action="includes/cancel.lookup.inc.php" method="POST">
             <div>
@@ -31,14 +31,14 @@ include_once 'header.php';
 
             <div>
             <div class="error-msg" id="error-msg-2"></div>
-            <button type="submit" name="send-cancel-data" id="cancelBTN">Look up reservation</button>
+            <button type="submit" name="send-cancel-data" id="cancelBTN" class="button">Look up reservation</button>
             </div>
         </form>
         <?php
         
         if(isset($_SESSION['message'])): ?>
 
-        <div>
+        <div class="error-1">
              <?php
 
              

@@ -123,6 +123,26 @@ nav {
   height: 1.5rem;
   margin-top: 0.4rem;
 }
+
+/*reservation.php*/
+.error-1 {
+  color: crimson;
+  font-size: 1.5rem;
+  height: 1.5rem;
+  margin-top: 0.4rem;
+  margin-bottom: 0.4rem;
+}
+
+.error-2 {
+  color: crimson;
+  font-size: 1rem;
+}
+
+.error-msg {
+  color: crimson;
+  font-size: 1rem;
+}
+
 input[type="text"] {
   border-radius: 5px;
   padding: 5px;
