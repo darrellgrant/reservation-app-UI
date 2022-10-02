@@ -43,6 +43,7 @@ function nextPrev(n) {
       !validateGuestNum())
   )
     return false;
+
   x[currentTab].style.display = "none";
   currentTab = currentTab + n;
 
