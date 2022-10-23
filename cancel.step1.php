@@ -17,8 +17,8 @@ include_once 'header.php';
             </div>
             <input type="text" name="firstname" placeholder="First name" class="input-c" onchange="validateCancelInput()">
             <div class="error-msg" id="error-msg-1"></div>
-            
-            
+
+
             <div>
             Last name
             </div>
@@ -35,22 +35,19 @@ include_once 'header.php';
             </div>
         </form>
         <?php
-        
-        if(isset($_SESSION['message'])): ?>
 
-        <div class="error-1">
-             <?php
-
-             
-                                
-                                echo $_SESSION['message'];
-                                unset ($_SESSION['message']);
-                                
-            ?>
+if (isset($_SESSION['message'])): ?>
 
 
+
+
+        <div class="error-1 yellow-class">
+            <p><?php echo $_SESSION['message']; ?></p>
+            <?php unset($_SESSION['message']);?>
         </div>
-        <?php endif; ?>
+
+
+        <?php endif;?>
     </div>
 </section>
 <?php

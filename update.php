@@ -128,7 +128,7 @@ if (isset($_SESSION['guest'])){
                   value="no-preference" <?php echo $nopref; ?>
                   class="radioGroup03"
                 />
-                <label for="nonsmoking">No Preference</label>
+                <label for="no-preference">No Preference</label>
     </div>
 
 
